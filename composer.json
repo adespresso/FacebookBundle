@@ -1,0 +1,46 @@
+{
+    "authors": [
+        {
+            "email": "emanuele@adespresso.com",
+            "name": "Emanuele Minotto"
+        }
+    ],
+    "config": {
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "AdEspresso\\FacebookBundle\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "AdEspresso\\FacebookBundle\\": "tests"
+        }
+    },
+    "description": "AdEspresso Symfony Bundle for Facebook interactions' management",
+    "keywords": [
+        "symfony",
+        "bundle",
+        "facebook"
+    ],
+    "license": "MIT",
+    "name": "adespresso/facebook-bundle",
+    "require": {
+        "php": "^5.5 || ^7.0",
+        "facebook/php-sdk-v4": "^5.2",
+        "symfony/symfony": "^2.8 || ^3.0"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^1.11",
+        "matthiasnoback/symfony-dependency-injection-test": "^0.7.6",
+        "phpunit/phpunit": "^4.8 || ^5.0"
+    },
+    "scripts": {
+        "test": [
+            "php-cs-fixer --ansi -vv fix",
+            "phpunit --colors=always -v"
+        ]
+    },
+    "type": "symfony-bundle"
+}
