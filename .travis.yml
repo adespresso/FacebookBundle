@@ -10,9 +10,8 @@ php:
 # See: http://docs.travis-ci.com/user/workers/container-based-infrastructure/
 sudo: false
 
-before_script:
-  - travis_retry composer self-update
-  - travis_retry composer update ${COMPOSER_FLAGS} --no-interaction --prefer-source
+before_install: composer self-update
 
-script:
-  - composer test
+install: composer install --no-interaction --prefer-source
+
+script: composer test
