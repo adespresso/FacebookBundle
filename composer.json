@@ -18,7 +18,7 @@
             "AdEspresso\\FacebookBundle\\": "tests"
         }
     },
-    "description": "AdEspresso Symfony Bundle for Facebook interactions' management",
+    "description": "Symfony Bundle for Facebook interactions' management",
     "keywords": [
         "symfony",
         "bundle",
