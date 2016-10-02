@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+        <!-- SDK -->
+        <service class="Facebook\Facebook" id="facebook.sdk">
+            <argument type="collection">
+                <argument id="facebook.sdk.http_client_handler" key="http_client_handler" type="service"/>
+                <argument id="facebook.sdk.persistent_data_handler" key="persistent_data_handler" type="service"/>
+                <argument id="facebook.sdk.pseudo_random_string_generator" key="pseudo_random_string_generator" type="service"/>
+                <argument id="facebook.sdk.url_detection_handler" key="url_detection_handler" type="service"/>
+            </argument>
+        </service>
+        <service class="AdEspresso\FacebookBundle\Adapter\Sdk\HttpClient" id="facebook.sdk.http_client_handler" public="false">
+            <call method="setEventDispatcher">
+                <argument id="event_dispatcher" type="service"/>
+            </call>
+        </service>
+        <service class="AdEspresso\FacebookBundle\Adapter\Sdk\PersistentDataDecorator" id="facebook.sdk.persistent_data_handler" public="false">
+            <argument id="facebook.persistent_data.factory" type="service"/>
+            <call method="setEventDispatcher">
+                <argument id="event_dispatcher" type="service"/>
+            </call>
+        </service>
+        <service class="AdEspresso\FacebookBundle\Adapter\Sdk\PseudoRandomStringDecorator" id="facebook.sdk.pseudo_random_string_generator" public="false">
+            <argument id="facebook.pseudo_random_string.factory" type="service"/>
+            <call method="setEventDispatcher">
+                <argument id="event_dispatcher" type="service"/>
+            </call>
+        </service>
+        <service class="AdEspresso\FacebookBundle\Adapter\Sdk\UrlDetectionDecorator" id="facebook.sdk.url_detection_handler" public="false">
+            <argument id="facebook.sdk.facebook_url_detection_handler" type="service"/>
+            <call method="setEventDispatcher">
+                <argument id="event_dispatcher" type="service"/>
+            </call>
+        </service>
+        <service class="Facebook\PersistentData\PersistentDataFactory" id="facebook.persistent_data.factory" public="false">
+            <factory class="Facebook\PersistentData\PersistentDataFactory" method="createPersistentDataHandler"/>
+            <argument/>
+        </service>
+        <service class="Facebook\PseudoRandomString\PseudoRandomStringGeneratorFactory" id="facebook.pseudo_random_string.factory" public="false">
+            <factory class="Facebook\PseudoRandomString\PseudoRandomStringGeneratorFactory" method="createPseudoRandomStringGenerator"/>
+            <argument/>
+        </service>
+        <service class="Facebook\Url\FacebookUrlDetectionHandler" id="facebook.sdk.facebook_url_detection_handler" public="false"/>
+        <!-- Ads SDK -->
+        <service class="FacebookAds\Api" id="facebook.ads">
+            <argument id="facebook_ads.http.client" type="service"/>
+            <argument id="facebook_ads.session" type="service"/>
+            <call method="setLogger">
+                <argument id="facebook.ads.logger" type="service"/>
+            </call>
+        </service>
+        <service class="FacebookAds\Session" id="facebook_ads.session" public="false"/>
+        <service class="FacebookAds\Http\Client" id="facebook_ads.http.client" public="false">
+            <call method="setAdapter">
+                <argument id="facebook.ads.http_adapter" type="service"/>
+            </call>
+        </service>
+        <service class="AdEspresso\FacebookBundle\Adapter\Ads\HttpAdapter" id="facebook.ads.http_adapter" public="false">
+            <argument id="facebook_ads.http.client" type="service"/>
+            <call method="setEventDispatcher">
+                <argument id="event_dispatcher" type="service"/>
+            </call>
+        </service>
+        <service class="AdEspresso\FacebookBundle\Adapter\Ads\Logger" id="facebook.ads.logger" public="false">
+            <argument id="logger" type="service"/>
+        </service>
+        <service class="AdEspresso\FacebookBundle\Subscriber\AdsConfigSubscriber" id="facebook.subscriber.ads_config" public="false">
+            <argument id="facebook.ads" type="service"/>
+            <tag name="kernel.event_subscriber"/>
+        </service>
+    </services>
+</container>
