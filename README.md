@@ -1,10 +1,12 @@
+AdEspresso Facebook Bundle
+==========================
 
 [![Build Status](https://img.shields.io/travis/adespresso/FacebookBundle.svg?style=flat)](https://travis-ci.org/adespresso/FacebookBundle)
 [![Coverage Status](https://img.shields.io/coveralls/adespresso/FacebookBundle.svg?style=flat)](https://coveralls.io/r/adespresso/FacebookBundle)
 [![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/adespresso/FacebookBundle.svg?style=flat)](https://scrutinizer-ci.com/g/adespresso/FacebookBundle/)
 [![Total Downloads](https://img.shields.io/packagist/dt/adespresso/facebook-bundle.svg?style=flat)](https://packagist.org/packages/adespresso/facebook-bundle)
 
-Symfony Bundle for [facebook/php-sdk-v4](https://github.com/facebook/facebook-php-sdk-v4).
+Symfony Bundle for Facebook interactions' management.
 
 Step 1: Download the Bundle
 ---------------------------
@@ -42,3 +44,26 @@ class AppKernel extends Kernel
     }
 }
 ```
+
+Step 3: Configure the Bundle
+----------------------------
+
+```yaml
+# app/config/config.yml
+facebook:
+    sdk:
+        config:
+            app_id: 'your_id'
+            app_secret: 'your_secret'
+    ads:
+        config:
+            app_id: 'your_id'
+            app_secret: 'your_secret'
+```
+
+Documentation
+-------------
+
+The source of the documentation is stored in the `Resources/doc/` folder in this bundle:
+
+[Read the Documentation for master](https://github.com/adespresso/FacebookBundle/tree/master/Resources/doc/index.rst)
