@@ -1,21 +1,18 @@
 <?php
 
-$config = Symfony\CS\Config\Config::create()
-    ->level(Symfony\CS\FixerInterface::SYMFONY_LEVEL)
-    ->fixers([
-        'ordered_use',
-        'phpdoc_order',
-        'short_array_syntax',
-    ]);
+$finder = PhpCsFixer\Finder::create()
+    ->exclude('Resources')
+    ->in(__DIR__.'/src')
+    ->in(__DIR__.'/tests');
 
-if (null === $input->getArgument('path')) {
-    $config
-        ->finder(
-            Symfony\CS\Finder\DefaultFinder::create()
-                ->exclude('Resources')
-                ->in(__DIR__.'/src')
-                ->in(__DIR__.'/tests')
-        );
-}
-
-return $config;
+return PhpCsFixer\Config::create()
+    ->setUsingCache(false)
+    ->setRules([
+        '@Symfony' => true,
+        'ordered_imports' => true,
+        'phpdoc_order' => true,
+        'array_syntax' => [
+            'syntax' => 'short',
+        ],
+    ])
+    ->setFinder($finder);

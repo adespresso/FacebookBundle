@@ -66,6 +66,7 @@ class HttpAdapter extends AbstractAdapter
     {
         $this->opts = $opts;
     }
+
     /**
      * {@inheritdoc}
      */
