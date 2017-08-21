@@ -9,13 +9,14 @@ use Facebook\Http\GraphRawResponse;
 use Facebook\HttpClients\FacebookHttpClientInterface;
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
+use Psr\Http\Message\ResponseInterface;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 class HttpClient implements FacebookHttpClientInterface
 {
     /**
-     * Guzzle 6 client.
+     * Guzzle 6 HTTP client.
      *
      * @var ClientInterface
      */
@@ -38,13 +39,23 @@ class HttpClient implements FacebookHttpClientInterface
     }
 
     /**
-     * Sets the Guzzle 6 client.
+     * Sets the Guzzle 6 HTTP client.
      *
      * @param ClientInterface $client
      */
     public function setClient(ClientInterface $client)
     {
         $this->client = $client;
+    }
+
+    /**
+     * Gets the Guzzle 6 HTTP client.
+     *
+     * @return ClientInterface
+     */
+    public function getClient()
+    {
+        return $this->client;
     }
 
     /**
@@ -58,37 +69,28 @@ class HttpClient implements FacebookHttpClientInterface
     }
 
     /**
+     * Gets the events dispatcher.
+     *
+     * @return EventDispatcherInterface
+     */
+    public function getEventDispatcher()
+    {
+        return $this->eventDispatcher;
+    }
+
+    /**
      * {@inheritdoc}
      */
     public function send($url, $method, $body, array $headers, $timeOut)
     {
-        $preSendEvent = new HttpClientPreSendEvent($request, $this);
+        $preSendEvent = new HttpClientPreSendEvent(...func_get_args());
         $this->eventDispatcher->dispatch(
             Events::SDK_HTTP_CLIENT_PRE_SEND,
             $preSendEvent
         );
 
-        $url = $preSendEvent->getUrl();
-        $method = $preSendEvent->getMethod();
-        $body = $preSendEvent->getBody();
-        $headers = $preSendEvent->getHeaders();
-        $timeOut = $preSendEvent->getTimeOut();
-
-        $response = $this->client->request($method, $url, [
-            'body' => $body,
-            'headers' => $headers,
-        ]);
-
-        $headers = [];
-        foreach ($response->getHeaders() as $name => $values) {
-            $headers[$name] = implode(', ', $values);
-        }
-
-        $graphRawResponse = new GraphRawResponse(
-            $headers,
-            (string) $response->getBody(),
-            $response->getStatusCode()
-        );
+        $response = $this->sendRequest($preSendEvent);
+        $graphRawResponse = $this->getGraphRawResponse($response);
 
         $postSendEvent = new HttpClientPostSendEvent($graphRawResponse);
         $this->eventDispatcher->dispatch(
@@ -97,5 +99,47 @@ class HttpClient implements FacebookHttpClientInterface
         );
 
         return $postSendEvent->getGraphRawResponse();
+    }
+
+    /**
+     * Sends the HTTP request.
+     *
+     * @param HttpClientPreSendEvent $event
+     *
+     * @return ResponseInterface
+     */
+    private function sendRequest(HttpClientPreSendEvent $event)
+    {
+        return $this->client->request(
+            $event->getMethod(),
+            $event->getUrl(),
+            [
+                'body' => $event->getBody(),
+                'headers' => $event->getHeaders(),
+                'http_errors' => false,
+                'timeout' => $event->getTimeOut(),
+            ]
+        );
+    }
+
+    /**
+     * Gets the graph raw response.
+     *
+     * @param ResponseInterface $response
+     *
+     * @return GraphRawResponse
+     */
+    private function getGraphRawResponse(ResponseInterface $response)
+    {
+        $headers = [];
+        foreach ($response->getHeaders() as $name => $values) {
+            $headers[$name] = implode(', ', $values);
+        }
+
+        return new GraphRawResponse(
+            $headers,
+            (string) $response->getBody(),
+            $response->getStatusCode()
+        );
     }
 }

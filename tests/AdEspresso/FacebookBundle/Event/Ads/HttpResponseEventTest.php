@@ -7,7 +7,6 @@ use FacebookAds\Http\ResponseInterface;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers \AdEspresso\FacebookBundle\Event\Ads\HttpResponseEvent
  * @group unit
  */
 class HttpResponseEventTest extends TestCase
@@ -22,38 +21,36 @@ class HttpResponseEventTest extends TestCase
      */
     protected function setUp()
     {
-        $this->response = $this->createMock(ResponseInterface::class);
-        $this->adapter = $this->createMock(AdapterInterface::class);
+        $this->response = $this
+            ->getMockBuilder(ResponseInterface::class)
+            ->disableOriginalConstructor()
+            ->getMock();
+
+        $this->adapter = $this
+            ->getMockBuilder(AdapterInterface::class)
+            ->disableOriginalConstructor()
+            ->getMock();
+
         $this->object = new HttpResponseEvent($this->response, $this->adapter);
     }
 
-    /**
-     * @covers \AdEspresso\FacebookBundle\Event\Ads\HttpResponseEvent::getResponse
-     *
-     * @todo   Implement testGetResponse()
-     */
-    public function testGetResponse()
+    public function testRequest()
     {
-        $this->markTestIncomplete();
+        $this->assertSame($this->response, $this->object->getResponse());
+
+        $response = $this
+            ->getMockBuilder(ResponseInterface::class)
+            ->disableOriginalConstructor()
+            ->getMock();
+
+        $this->object->setResponse($response);
+
+        $this->assertSame($response, $this->object->getResponse());
+        $this->assertNotSame($this->response, $this->object->getResponse());
     }
 
-    /**
-     * @covers \AdEspresso\FacebookBundle\Event\Ads\HttpResponseEvent::setResponse
-     *
-     * @todo   Implement testSetResponse()
-     */
-    public function testSetResponse()
+    public function testAdapter()
     {
-        $this->markTestIncomplete();
-    }
-
-    /**
-     * @covers \AdEspresso\FacebookBundle\Event\Ads\HttpResponseEvent::getAdapter
-     *
-     * @todo   Implement testGetAdapter()
-     */
-    public function testGetAdapter()
-    {
-        $this->markTestIncomplete();
+        $this->assertSame($this->adapter, $this->object->getAdapter());
     }
 }

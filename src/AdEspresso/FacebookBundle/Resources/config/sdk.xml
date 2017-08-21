@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+        <service class="Facebook\Facebook" id="facebook.sdk">
+            <argument type="collection">
+                <argument id="facebook.sdk.http_client_handler" key="http_client_handler" type="service"/>
+            </argument>
+        </service>
+        <service class="AdEspresso\FacebookBundle\Adapter\Sdk\HttpClient" id="facebook.sdk.http_client_handler" public="false">
+            <call method="setEventDispatcher">
+                <argument id="event_dispatcher" type="service"/>
+            </call>
+        </service>
+        <service class="AdEspresso\FacebookBundle\Adapter\FQB" id="facebook.sdk.query_builder" shared="false">
+            <argument id="facebook.sdk" type="service"/>
+        </service>
+    </services>
+</container>

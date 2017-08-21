@@ -29,14 +29,14 @@ class Logger implements LoggerInterface
      */
     public function log($level, $message, array $context = [])
     {
-        if (defined(LogLevel::class.'::'.strtoupper($level))) {
-            $this->psrLogger->log($level, $message, $context);
+        if (defined(LogLevel::class.'::'.mb_strtoupper($level))) {
+            $this->psrLogger->log(mb_strtolower($level), $message, $context);
 
             return;
         }
 
         $this->psrLogger->debug($message, [
-            'level' => $level,
+            'level' => mb_strtolower($level),
             'context' => $context,
         ]);
     }

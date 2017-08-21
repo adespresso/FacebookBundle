@@ -48,7 +48,7 @@ class HttpClientPreSendEvent extends Event
     }
 
     /**
-     * Gets the value of url.
+     * Gets the URL.
      *
      * @return string
      */
@@ -58,7 +58,7 @@ class HttpClientPreSendEvent extends Event
     }
 
     /**
-     * Sets the value of url.
+     * Sets the URL.
      *
      * @param string $url
      */
@@ -68,7 +68,7 @@ class HttpClientPreSendEvent extends Event
     }
 
     /**
-     * Gets the value of method.
+     * Gets the HTTP method.
      *
      * @return string
      */
@@ -78,7 +78,7 @@ class HttpClientPreSendEvent extends Event
     }
 
     /**
-     * Sets the value of method.
+     * Sets the HTTP method.
      *
      * @param string $method
      */
@@ -88,7 +88,7 @@ class HttpClientPreSendEvent extends Event
     }
 
     /**
-     * Gets the value of body.
+     * Gets the body.
      *
      * @return string
      */
@@ -98,7 +98,7 @@ class HttpClientPreSendEvent extends Event
     }
 
     /**
-     * Sets the value of body.
+     * Sets the body.
      *
      * @param string $body
      */
@@ -108,7 +108,7 @@ class HttpClientPreSendEvent extends Event
     }
 
     /**
-     * Gets the value of headers.
+     * Gets the headers.
      *
      * @return array
      */
@@ -118,7 +118,7 @@ class HttpClientPreSendEvent extends Event
     }
 
     /**
-     * Sets the value of headers.
+     * Sets the headers.
      *
      * @param array $headers
      */
@@ -128,7 +128,7 @@ class HttpClientPreSendEvent extends Event
     }
 
     /**
-     * Gets the value of timeOut.
+     * Gets the HTTP request timeout.
      *
      * @return int
      */
@@ -138,7 +138,7 @@ class HttpClientPreSendEvent extends Event
     }
 
     /**
-     * Sets the value of timeOut.
+     * Sets the HTTP request timeout.
      *
      * @param int $timeOut
      */

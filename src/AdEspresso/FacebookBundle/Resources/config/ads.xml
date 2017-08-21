@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+        <service class="FacebookAds\Api" id="facebook.ads">
+            <argument id="facebook.ads.http.client" type="service"/>
+            <argument id="facebook.ads.session" type="service"/>
+            <call method="setLogger">
+                <argument id="facebook.ads.logger" type="service"/>
+            </call>
+        </service>
+        <service class="FacebookAds\Session" id="facebook.ads.session" public="false"/>
+        <service class="FacebookAds\Http\Client" id="facebook.ads.http.client" public="false">
+            <call method="setAdapter">
+                <argument id="facebook.ads.http_adapter" type="service"/>
+            </call>
+        </service>
+        <service class="AdEspresso\FacebookBundle\Adapter\Ads\HttpAdapter" id="facebook.ads.http_adapter" lazy="true" public="false">
+            <argument id="facebook.ads.http.client" type="service"/>
+            <call method="setEventDispatcher">
+                <argument id="event_dispatcher" type="service"/>
+            </call>
+        </service>
+        <service class="AdEspresso\FacebookBundle\Adapter\Ads\Logger" id="facebook.ads.logger" public="false">
+            <argument id="logger" type="service"/>
+            <tag channel="facebook" name="monolog.logger"/>
+        </service>
+        <service class="AdEspresso\FacebookBundle\Subscriber\AdsConfigSubscriber" id="facebook.subscriber.ads_config">
+            <argument id="facebook.ads" type="service"/>
+            <tag name="kernel.event_subscriber"/>
+        </service>
+    </services>
+</container>

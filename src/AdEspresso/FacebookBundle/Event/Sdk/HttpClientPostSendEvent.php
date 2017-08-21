@@ -21,7 +21,7 @@ class HttpClientPostSendEvent extends Event
     }
 
     /**
-     * Gets the value of graphRawResponse.
+     * Gets the graph raw response.
      *
      * @return GraphRawResponse
      */
@@ -31,7 +31,7 @@ class HttpClientPostSendEvent extends Event
     }
 
     /**
-     * Sets the value of graphRawResponse.
+     * Sets the graph raw response.
      *
      * @param GraphRawResponse $graphRawResponse
      */

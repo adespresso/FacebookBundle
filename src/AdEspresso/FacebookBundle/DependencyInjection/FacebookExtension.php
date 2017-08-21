@@ -13,6 +13,16 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 class FacebookExtension extends Extension
 {
     /**
+     * @var string[]
+     */
+    const SDK_SERVICES = [
+        'http_client_handler',
+        'persistent_data_handler',
+        'pseudo_random_string_generator',
+        'url_detection_handler',
+    ];
+
+    /**
      * {@inheritdoc}
      */
     public function load(array $configs, ContainerBuilder $container)
@@ -25,39 +35,54 @@ class FacebookExtension extends Extension
             new FileLocator(__DIR__.'/../Resources/config')
         );
 
-        $loader->load('services.xml');
+        if ($config['sdk']['enabled']) {
+            $loader->load('sdk.xml');
+            $this->loadSdk($config['sdk'], $container);
+        }
 
-        $this->configureSdk($config['sdk'], $container);
-        $this->configureAds($config['ads'], $container);
+        if ($config['ads']['enabled']) {
+            $loader->load('ads.xml');
+            $this->loadAds($config['ads'], $container);
+        }
     }
 
-    private function configureSdk(array $config, ContainerBuilder $container)
+    /**
+     * Loads and configure the SDK services.
+     *
+     * @param array            $config
+     * @param ContainerBuilder $container
+     */
+    private function loadSdk(array $config, ContainerBuilder $container)
     {
+        if (!isset($config['config'])) {
+            return;
+        }
+
+        $sdkConfig = array_filter($config['config']);
+
+        foreach (self::SDK_SERVICES as $service) {
+            if (isset($sdkConfig[$service])) {
+                $sdkConfig[$service] = $container->getDefinition($sdkConfig[$service]);
+            }
+        }
+
         $sdk = $container->getDefinition('facebook.sdk');
-
-        $sdkConfig = $config['config'];
-        $sdkOptions = $config['options'];
-
-        $arguments = array_filter([
-            'app_id' => $sdkConfig['app_id'],
-            'app_secret' => $sdkConfig['app_secret'],
-            'default_graph_version' => $sdkConfig['default_graph_version'],
-            'default_access_token' => $sdkConfig['default_access_token'],
-            'enable_beta_mode' => $sdkOptions['enable_beta_mode'],
-        ]);
-
-        $arguments = array_merge($sdk->getArgument(0), $arguments);
-
+        $arguments = array_merge($sdk->getArgument(0), $sdkConfig);
         $sdk->replaceArgument(0, $arguments);
     }
 
-    private function configureAds(array $config, ContainerBuilder $container)
+    /**
+     * Loads and configure the ADS SDK services.
+     *
+     * @param array            $config
+     * @param ContainerBuilder $container
+     */
+    private function loadAds(array $config, ContainerBuilder $container)
     {
         $adsConfig = $config['config'];
-        $adsOptions = $config['options'];
 
         $container
-            ->getDefinition('facebook_ads.session')
+            ->getDefinition('facebook.ads.session')
             ->setArguments([
                 $adsConfig['app_id'],
                 $adsConfig['app_secret'],
@@ -77,8 +102,10 @@ class FacebookExtension extends Extension
                 ]
             );
 
-        $container
-            ->getDefinition('facebook.subscriber.ads_config')
-            ->addArgument($adsOptions['use_implicit_fetch']);
+        if (isset($config['options'])) {
+            $container
+                ->getDefinition('facebook.subscriber.ads_config')
+                ->addArgument($config['options']['use_implicit_fetch']);
+        }
     }
 }

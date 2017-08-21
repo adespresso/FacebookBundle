@@ -6,7 +6,6 @@ use Facebook\Http\GraphRawResponse;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers \AdEspresso\FacebookBundle\Event\Sdk\HttpClientPostSendEvent
  * @group unit
  */
 class HttpClientPostSendEventTest extends TestCase
@@ -21,27 +20,35 @@ class HttpClientPostSendEventTest extends TestCase
      */
     protected function setUp()
     {
-        $this->graphRawResponse = $this->createMock(GraphRawResponse::class);
+        $this->graphRawResponse = $this
+            ->getMockBuilder(GraphRawResponse::class)
+            ->disableOriginalConstructor()
+            ->getMock();
+
         $this->object = new HttpClientPostSendEvent($this->graphRawResponse);
     }
 
-    /**
-     * @covers \AdEspresso\FacebookBundle\Event\Sdk\HttpClientPostSendEvent::getGraphRawResponse
-     *
-     * @todo   Implement testGetGraphRawResponse()
-     */
-    public function testGetGraphRawResponse()
+    public function testGraphRawResponse()
     {
-        $this->markTestIncomplete();
-    }
+        $this->assertSame(
+            $this->graphRawResponse,
+            $this->object->getGraphRawResponse()
+        );
 
-    /**
-     * @covers \AdEspresso\FacebookBundle\Event\Sdk\HttpClientPostSendEvent::setGraphRawResponse
-     *
-     * @todo   Implement testSetGraphRawResponse()
-     */
-    public function testSetGraphRawResponse()
-    {
-        $this->markTestIncomplete();
+        $graphRawResponse = $this
+            ->getMockBuilder(GraphRawResponse::class)
+            ->disableOriginalConstructor()
+            ->getMock();
+
+        $this->object->setGraphRawResponse($graphRawResponse);
+
+        $this->assertSame(
+            $graphRawResponse,
+            $this->object->getGraphRawResponse()
+        );
+        $this->assertNotSame(
+            $this->graphRawResponse,
+            $this->object->getGraphRawResponse()
+        );
     }
 }

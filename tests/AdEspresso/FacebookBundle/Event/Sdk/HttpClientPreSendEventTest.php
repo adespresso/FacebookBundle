@@ -5,7 +5,6 @@ namespace AdEspresso\FacebookBundle\Event\Sdk;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers \AdEspresso\FacebookBundle\Event\Sdk\HttpClientPreSendEvent
  * @group unit
  */
 class HttpClientPreSendEventTest extends TestCase
@@ -35,103 +34,63 @@ class HttpClientPreSendEventTest extends TestCase
         );
     }
 
-    /**
-     * @covers \AdEspresso\FacebookBundle\Event\Sdk\HttpClientPreSendEvent::getUrl
-     *
-     * @todo   Implement testGetUrl()
-     */
-    public function testGetUrl()
+    public function testUrl()
     {
-        $this->markTestIncomplete();
+        $this->assertSame($this->url, $this->object->getUrl());
+
+        $url = sha1(mt_rand());
+
+        $this->object->setUrl($url);
+
+        $this->assertSame($url, $this->object->getUrl());
+        $this->assertNotSame($this->url, $this->object->getUrl());
     }
 
-    /**
-     * @covers \AdEspresso\FacebookBundle\Event\Sdk\HttpClientPreSendEvent::setUrl
-     *
-     * @todo   Implement testSetUrl()
-     */
-    public function testSetUrl()
+    public function testMethod()
     {
-        $this->markTestIncomplete();
+        $this->assertSame($this->method, $this->object->getMethod());
+
+        $method = sha1(mt_rand());
+
+        $this->object->setMethod($method);
+
+        $this->assertSame($method, $this->object->getMethod());
+        $this->assertNotSame($this->method, $this->object->getMethod());
     }
 
-    /**
-     * @covers \AdEspresso\FacebookBundle\Event\Sdk\HttpClientPreSendEvent::getMethod
-     *
-     * @todo   Implement testGetMethod()
-     */
-    public function testGetMethod()
+    public function testBody()
     {
-        $this->markTestIncomplete();
+        $this->assertSame($this->body, $this->object->getBody());
+
+        $body = sha1(mt_rand());
+
+        $this->object->setBody($body);
+
+        $this->assertSame($body, $this->object->getBody());
+        $this->assertNotSame($this->body, $this->object->getBody());
     }
 
-    /**
-     * @covers \AdEspresso\FacebookBundle\Event\Sdk\HttpClientPreSendEvent::setMethod
-     *
-     * @todo   Implement testSetMethod()
-     */
-    public function testSetMethod()
+    public function testHeaders()
     {
-        $this->markTestIncomplete();
+        $this->assertSame($this->headers, $this->object->getHeaders());
+
+        $headers = range(1, 5);
+
+        $this->object->setHeaders($headers);
+
+        $this->assertSame($headers, $this->object->getHeaders());
+        $this->assertNotSame($this->headers, $this->object->getHeaders());
     }
 
-    /**
-     * @covers \AdEspresso\FacebookBundle\Event\Sdk\HttpClientPreSendEvent::getBody
-     *
-     * @todo   Implement testGetBody()
-     */
-    public function testGetBody()
+    public function testTimeOut()
     {
-        $this->markTestIncomplete();
-    }
+        $this->assertSame($this->timeOut, $this->object->getTimeOut());
 
-    /**
-     * @covers \AdEspresso\FacebookBundle\Event\Sdk\HttpClientPreSendEvent::setBody
-     *
-     * @todo   Implement testSetBody()
-     */
-    public function testSetBody()
-    {
-        $this->markTestIncomplete();
-    }
+        $timeOut = mt_rand();
 
-    /**
-     * @covers \AdEspresso\FacebookBundle\Event\Sdk\HttpClientPreSendEvent::getHeaders
-     *
-     * @todo   Implement testGetHeaders()
-     */
-    public function testGetHeaders()
-    {
-        $this->markTestIncomplete();
-    }
+        $this->object->setTimeOut($timeOut);
 
-    /**
-     * @covers \AdEspresso\FacebookBundle\Event\Sdk\HttpClientPreSendEvent::setHeaders
-     *
-     * @todo   Implement testSetHeaders()
-     */
-    public function testSetHeaders()
-    {
-        $this->markTestIncomplete();
-    }
-
-    /**
-     * @covers \AdEspresso\FacebookBundle\Event\Sdk\HttpClientPreSendEvent::getTimeOut
-     *
-     * @todo   Implement testGetTimeOut()
-     */
-    public function testGetTimeOut()
-    {
-        $this->markTestIncomplete();
-    }
-
-    /**
-     * @covers \AdEspresso\FacebookBundle\Event\Sdk\HttpClientPreSendEvent::setTimeOut
-     *
-     * @todo   Implement testSetTimeOut()
-     */
-    public function testSetTimeOut()
-    {
-        $this->markTestIncomplete();
+        $this->assertSame($timeOut, $this->object->getTimeOut());
+        $this->assertNotSame($this->timeOut, $this->object->getTimeOut());
     }
 }

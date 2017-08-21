@@ -31,7 +31,7 @@ class HttpRequestEvent extends Event
     }
 
     /**
-     * Gets the value of request.
+     * Gets the HTTP request.
      *
      * @return RequestInterface
      */
@@ -41,7 +41,7 @@ class HttpRequestEvent extends Event
     }
 
     /**
-     * Sets the value of request.
+     * Sets the HTTP request.
      *
      * @param RequestInterface $request
      */
@@ -51,7 +51,7 @@ class HttpRequestEvent extends Event
     }
 
     /**
-     * Gets the value of adapter.
+     * Gets the adapter.
      *
      * @return AdapterInterface
      */
