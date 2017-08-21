@@ -5,7 +5,7 @@ namespace AdEspresso\FacebookBundle\Event\Sdk;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers AdEspresso\FacebookBundle\Event\Sdk\PseudoRandomStringPostGetEvent
+ * @covers \AdEspresso\FacebookBundle\Event\Sdk\PseudoRandomStringPostGetEvent
  * @group unit
  */
 class PseudoRandomStringPostGetEventTest extends TestCase
@@ -26,7 +26,7 @@ class PseudoRandomStringPostGetEventTest extends TestCase
     }
 
     /**
-     * @covers AdEspresso\FacebookBundle\Event\Sdk\PseudoRandomStringPostGetEvent::getLength
+     * @covers \AdEspresso\FacebookBundle\Event\Sdk\PseudoRandomStringPostGetEvent::getLength
      *
      * @todo   Implement testGetLength()
      */
@@ -36,7 +36,7 @@ class PseudoRandomStringPostGetEventTest extends TestCase
     }
 
     /**
-     * @covers AdEspresso\FacebookBundle\Event\Sdk\PseudoRandomStringPostGetEvent::getPseudoRandomString
+     * @covers \AdEspresso\FacebookBundle\Event\Sdk\PseudoRandomStringPostGetEvent::getPseudoRandomString
      *
      * @todo   Implement testGetPseudoRandomString()
      */
@@ -46,7 +46,7 @@ class PseudoRandomStringPostGetEventTest extends TestCase
     }
 
     /**
-     * @covers AdEspresso\FacebookBundle\Event\Sdk\PseudoRandomStringPostGetEvent::setPseudoRandomString
+     * @covers \AdEspresso\FacebookBundle\Event\Sdk\PseudoRandomStringPostGetEvent::setPseudoRandomString
      *
      * @todo   Implement testSetPseudoRandomString()
      */

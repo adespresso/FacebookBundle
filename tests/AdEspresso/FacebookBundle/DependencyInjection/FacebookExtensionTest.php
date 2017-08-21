@@ -7,7 +7,7 @@ use FacebookAds\Api;
 use Matthias\SymfonyDependencyInjectionTest\PhpUnit\AbstractExtensionTestCase;
 
 /**
- * @covers AdEspresso\FacebookBundle\DependencyInjection\FacebookExtension
+ * @covers \AdEspresso\FacebookBundle\DependencyInjection\FacebookExtension
  * @group unit
  */
 class FacebookExtensionTest extends AbstractExtensionTestCase

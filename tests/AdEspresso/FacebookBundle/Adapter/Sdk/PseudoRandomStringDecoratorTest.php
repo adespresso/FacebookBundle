@@ -6,7 +6,7 @@ use Facebook\PseudoRandomString\PseudoRandomStringGeneratorInterface;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers AdEspresso\FacebookBundle\Adapter\Sdk\PseudoRandomStringDecorator
+ * @covers \AdEspresso\FacebookBundle\Adapter\Sdk\PseudoRandomStringDecorator
  * @group unit
  */
 class PseudoRandomStringDecoratorTest extends TestCase
@@ -26,7 +26,7 @@ class PseudoRandomStringDecoratorTest extends TestCase
     }
 
     /**
-     * @covers AdEspresso\FacebookBundle\Adapter\Sdk\PseudoRandomStringDecorator::setEventDispatcher
+     * @covers \AdEspresso\FacebookBundle\Adapter\Sdk\PseudoRandomStringDecorator::setEventDispatcher
      *
      * @todo   Implement testSetEventDispatcher()
      */
@@ -36,7 +36,7 @@ class PseudoRandomStringDecoratorTest extends TestCase
     }
 
     /**
-     * @covers AdEspresso\FacebookBundle\Adapter\Sdk\PseudoRandomStringDecorator::getPseudoRandomString
+     * @covers \AdEspresso\FacebookBundle\Adapter\Sdk\PseudoRandomStringDecorator::getPseudoRandomString
      *
      * @todo   Implement testGetPseudoRandomString()
      */

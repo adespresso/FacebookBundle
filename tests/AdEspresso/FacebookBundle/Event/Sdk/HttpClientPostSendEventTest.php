@@ -6,7 +6,7 @@ use Facebook\Http\GraphRawResponse;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers AdEspresso\FacebookBundle\Event\Sdk\HttpClientPostSendEvent
+ * @covers \AdEspresso\FacebookBundle\Event\Sdk\HttpClientPostSendEvent
  * @group unit
  */
 class HttpClientPostSendEventTest extends TestCase
@@ -26,7 +26,7 @@ class HttpClientPostSendEventTest extends TestCase
     }
 
     /**
-     * @covers AdEspresso\FacebookBundle\Event\Sdk\HttpClientPostSendEvent::getGraphRawResponse
+     * @covers \AdEspresso\FacebookBundle\Event\Sdk\HttpClientPostSendEvent::getGraphRawResponse
      *
      * @todo   Implement testGetGraphRawResponse()
      */
@@ -36,7 +36,7 @@ class HttpClientPostSendEventTest extends TestCase
     }
 
     /**
-     * @covers AdEspresso\FacebookBundle\Event\Sdk\HttpClientPostSendEvent::setGraphRawResponse
+     * @covers \AdEspresso\FacebookBundle\Event\Sdk\HttpClientPostSendEvent::setGraphRawResponse
      *
      * @todo   Implement testSetGraphRawResponse()
      */

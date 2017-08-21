@@ -5,7 +5,7 @@ namespace AdEspresso\FacebookBundle\Event\Sdk;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers AdEspresso\FacebookBundle\Event\Sdk\PostGetCurrentUrlEvent
+ * @covers \AdEspresso\FacebookBundle\Event\Sdk\PostGetCurrentUrlEvent
  * @group unit
  */
 class PostGetCurrentUrlEventTest extends TestCase
@@ -25,7 +25,7 @@ class PostGetCurrentUrlEventTest extends TestCase
     }
 
     /**
-     * @covers AdEspresso\FacebookBundle\Event\Sdk\PostGetCurrentUrlEvent::getCurrentUrl
+     * @covers \AdEspresso\FacebookBundle\Event\Sdk\PostGetCurrentUrlEvent::getCurrentUrl
      *
      * @todo   Implement testGetCurrentUrl()
      */
@@ -35,7 +35,7 @@ class PostGetCurrentUrlEventTest extends TestCase
     }
 
     /**
-     * @covers AdEspresso\FacebookBundle\Event\Sdk\PostGetCurrentUrlEvent::setCurrentUrl
+     * @covers \AdEspresso\FacebookBundle\Event\Sdk\PostGetCurrentUrlEvent::setCurrentUrl
      *
      * @todo   Implement testSetCurrentUrl()
      */

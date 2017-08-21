@@ -6,7 +6,7 @@ use FacebookAds\Http\Client;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers AdEspresso\FacebookBundle\Adapter\Ads\HttpAdapter
+ * @covers \AdEspresso\FacebookBundle\Adapter\Ads\HttpAdapter
  * @group unit
  */
 class HttpAdapterTest extends TestCase
@@ -26,7 +26,7 @@ class HttpAdapterTest extends TestCase
     }
 
     /**
-     * @covers AdEspresso\FacebookBundle\Adapter\Ads\HttpAdapter::getOpts
+     * @covers \AdEspresso\FacebookBundle\Adapter\Ads\HttpAdapter::getOpts
      *
      * @todo   Implement testGetOpts()
      */
@@ -36,7 +36,7 @@ class HttpAdapterTest extends TestCase
     }
 
     /**
-     * @covers AdEspresso\FacebookBundle\Adapter\Ads\HttpAdapter::setOpts
+     * @covers \AdEspresso\FacebookBundle\Adapter\Ads\HttpAdapter::setOpts
      *
      * @todo   Implement testSetOpts()
      */
@@ -46,7 +46,7 @@ class HttpAdapterTest extends TestCase
     }
 
     /**
-     * @covers AdEspresso\FacebookBundle\Adapter\Ads\HttpAdapter::sendRequest
+     * @covers \AdEspresso\FacebookBundle\Adapter\Ads\HttpAdapter::sendRequest
      *
      * @todo   Implement testSendRequest()
      */
@@ -56,7 +56,7 @@ class HttpAdapterTest extends TestCase
     }
 
     /**
-     * @covers AdEspresso\FacebookBundle\Adapter\Ads\HttpAdapter::setGuzzleClient
+     * @covers \AdEspresso\FacebookBundle\Adapter\Ads\HttpAdapter::setGuzzleClient
      *
      * @todo   Implement testSetGuzzleClient()
      */
@@ -66,7 +66,7 @@ class HttpAdapterTest extends TestCase
     }
 
     /**
-     * @covers AdEspresso\FacebookBundle\Adapter\Ads\HttpAdapter::setEventDispatcher
+     * @covers \AdEspresso\FacebookBundle\Adapter\Ads\HttpAdapter::setEventDispatcher
      *
      * @todo   Implement testSetEventDispatcher()
      */

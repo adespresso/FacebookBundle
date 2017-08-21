@@ -5,7 +5,7 @@ namespace AdEspresso\FacebookBundle\Event\Sdk;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers AdEspresso\FacebookBundle\Event\Sdk\PseudoRandomStringPreGetEvent
+ * @covers \AdEspresso\FacebookBundle\Event\Sdk\PseudoRandomStringPreGetEvent
  * @group unit
  */
 class PseudoRandomStringPreGetEventTest extends TestCase
@@ -25,7 +25,7 @@ class PseudoRandomStringPreGetEventTest extends TestCase
     }
 
     /**
-     * @covers AdEspresso\FacebookBundle\Event\Sdk\PseudoRandomStringPreGetEvent::getLength
+     * @covers \AdEspresso\FacebookBundle\Event\Sdk\PseudoRandomStringPreGetEvent::getLength
      *
      * @todo   Implement testGetLength()
      */
@@ -35,7 +35,7 @@ class PseudoRandomStringPreGetEventTest extends TestCase
     }
 
     /**
-     * @covers AdEspresso\FacebookBundle\Event\Sdk\PseudoRandomStringPreGetEvent::setLength
+     * @covers \AdEspresso\FacebookBundle\Event\Sdk\PseudoRandomStringPreGetEvent::setLength
      *
      * @todo   Implement testSetLength()
      */

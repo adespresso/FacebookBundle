@@ -7,7 +7,7 @@ use FacebookAds\Http\RequestInterface;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers AdEspresso\FacebookBundle\Event\Ads\HttpRequestEvent
+ * @covers \AdEspresso\FacebookBundle\Event\Ads\HttpRequestEvent
  * @group unit
  */
 class HttpRequestEventTest extends TestCase
@@ -28,7 +28,7 @@ class HttpRequestEventTest extends TestCase
     }
 
     /**
-     * @covers AdEspresso\FacebookBundle\Event\Ads\HttpRequestEvent::getRequest
+     * @covers \AdEspresso\FacebookBundle\Event\Ads\HttpRequestEvent::getRequest
      *
      * @todo   Implement testGetRequest()
      */
@@ -38,7 +38,7 @@ class HttpRequestEventTest extends TestCase
     }
 
     /**
-     * @covers AdEspresso\FacebookBundle\Event\Ads\HttpRequestEvent::setRequest
+     * @covers \AdEspresso\FacebookBundle\Event\Ads\HttpRequestEvent::setRequest
      *
      * @todo   Implement testSetRequest()
      */
@@ -48,7 +48,7 @@ class HttpRequestEventTest extends TestCase
     }
 
     /**
-     * @covers AdEspresso\FacebookBundle\Event\Ads\HttpRequestEvent::getAdapter
+     * @covers \AdEspresso\FacebookBundle\Event\Ads\HttpRequestEvent::getAdapter
      *
      * @todo   Implement testGetAdapter()
      */

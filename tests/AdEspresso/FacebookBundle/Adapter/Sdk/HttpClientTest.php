@@ -5,7 +5,7 @@ namespace AdEspresso\FacebookBundle\Adapter\Sdk;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers AdEspresso\FacebookBundle\Adapter\Sdk\HttpClient
+ * @covers \AdEspresso\FacebookBundle\Adapter\Sdk\HttpClient
  * @group unit
  */
 class HttpClientTest extends TestCase
@@ -24,7 +24,7 @@ class HttpClientTest extends TestCase
     }
 
     /**
-     * @covers AdEspresso\FacebookBundle\Adapter\Sdk\HttpClient::setClient
+     * @covers \AdEspresso\FacebookBundle\Adapter\Sdk\HttpClient::setClient
      *
      * @todo   Implement testSetClient()
      */
@@ -34,7 +34,7 @@ class HttpClientTest extends TestCase
     }
 
     /**
-     * @covers AdEspresso\FacebookBundle\Adapter\Sdk\HttpClient::setEventDispatcher
+     * @covers \AdEspresso\FacebookBundle\Adapter\Sdk\HttpClient::setEventDispatcher
      *
      * @todo   Implement testSetEventDispatcher()
      */
@@ -44,7 +44,7 @@ class HttpClientTest extends TestCase
     }
 
     /**
-     * @covers AdEspresso\FacebookBundle\Adapter\Sdk\HttpClient::send
+     * @covers \AdEspresso\FacebookBundle\Adapter\Sdk\HttpClient::send
      *
      * @todo   Implement testSend()
      */

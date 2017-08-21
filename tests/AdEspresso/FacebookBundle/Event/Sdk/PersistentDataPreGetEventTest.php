@@ -5,7 +5,7 @@ namespace AdEspresso\FacebookBundle\Event\Sdk;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers AdEspresso\FacebookBundle\Event\Sdk\PersistentDataPreGetEvent
+ * @covers \AdEspresso\FacebookBundle\Event\Sdk\PersistentDataPreGetEvent
  * @group unit
  */
 class PersistentDataPreGetEventTest extends TestCase
@@ -25,7 +25,7 @@ class PersistentDataPreGetEventTest extends TestCase
     }
 
     /**
-     * @covers AdEspresso\FacebookBundle\Event\Sdk\PersistentDataPreGetEvent::getKey
+     * @covers \AdEspresso\FacebookBundle\Event\Sdk\PersistentDataPreGetEvent::getKey
      *
      * @todo   Implement testGetKey()
      */
@@ -35,7 +35,7 @@ class PersistentDataPreGetEventTest extends TestCase
     }
 
     /**
-     * @covers AdEspresso\FacebookBundle\Event\Sdk\PersistentDataPreGetEvent::setKey
+     * @covers \AdEspresso\FacebookBundle\Event\Sdk\PersistentDataPreGetEvent::setKey
      *
      * @todo   Implement testSetKey()
      */

@@ -5,7 +5,7 @@ namespace AdEspresso\FacebookBundle\Event\Sdk;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers AdEspresso\FacebookBundle\Event\Sdk\HttpClientPreSendEvent
+ * @covers \AdEspresso\FacebookBundle\Event\Sdk\HttpClientPreSendEvent
  * @group unit
  */
 class HttpClientPreSendEventTest extends TestCase
@@ -36,7 +36,7 @@ class HttpClientPreSendEventTest extends TestCase
     }
 
     /**
-     * @covers AdEspresso\FacebookBundle\Event\Sdk\HttpClientPreSendEvent::getUrl
+     * @covers \AdEspresso\FacebookBundle\Event\Sdk\HttpClientPreSendEvent::getUrl
      *
      * @todo   Implement testGetUrl()
      */
@@ -46,7 +46,7 @@ class HttpClientPreSendEventTest extends TestCase
     }
 
     /**
-     * @covers AdEspresso\FacebookBundle\Event\Sdk\HttpClientPreSendEvent::setUrl
+     * @covers \AdEspresso\FacebookBundle\Event\Sdk\HttpClientPreSendEvent::setUrl
      *
      * @todo   Implement testSetUrl()
      */
@@ -56,7 +56,7 @@ class HttpClientPreSendEventTest extends TestCase
     }
 
     /**
-     * @covers AdEspresso\FacebookBundle\Event\Sdk\HttpClientPreSendEvent::getMethod
+     * @covers \AdEspresso\FacebookBundle\Event\Sdk\HttpClientPreSendEvent::getMethod
      *
      * @todo   Implement testGetMethod()
      */
@@ -66,7 +66,7 @@ class HttpClientPreSendEventTest extends TestCase
     }
 
     /**
-     * @covers AdEspresso\FacebookBundle\Event\Sdk\HttpClientPreSendEvent::setMethod
+     * @covers \AdEspresso\FacebookBundle\Event\Sdk\HttpClientPreSendEvent::setMethod
      *
      * @todo   Implement testSetMethod()
      */
@@ -76,7 +76,7 @@ class HttpClientPreSendEventTest extends TestCase
     }
 
     /**
-     * @covers AdEspresso\FacebookBundle\Event\Sdk\HttpClientPreSendEvent::getBody
+     * @covers \AdEspresso\FacebookBundle\Event\Sdk\HttpClientPreSendEvent::getBody
      *
      * @todo   Implement testGetBody()
      */
@@ -86,7 +86,7 @@ class HttpClientPreSendEventTest extends TestCase
     }
 
     /**
-     * @covers AdEspresso\FacebookBundle\Event\Sdk\HttpClientPreSendEvent::setBody
+     * @covers \AdEspresso\FacebookBundle\Event\Sdk\HttpClientPreSendEvent::setBody
      *
      * @todo   Implement testSetBody()
      */
@@ -96,7 +96,7 @@ class HttpClientPreSendEventTest extends TestCase
     }
 
     /**
-     * @covers AdEspresso\FacebookBundle\Event\Sdk\HttpClientPreSendEvent::getHeaders
+     * @covers \AdEspresso\FacebookBundle\Event\Sdk\HttpClientPreSendEvent::getHeaders
      *
      * @todo   Implement testGetHeaders()
      */
@@ -106,7 +106,7 @@ class HttpClientPreSendEventTest extends TestCase
     }
 
     /**
-     * @covers AdEspresso\FacebookBundle\Event\Sdk\HttpClientPreSendEvent::setHeaders
+     * @covers \AdEspresso\FacebookBundle\Event\Sdk\HttpClientPreSendEvent::setHeaders
      *
      * @todo   Implement testSetHeaders()
      */
@@ -116,7 +116,7 @@ class HttpClientPreSendEventTest extends TestCase
     }
 
     /**
-     * @covers AdEspresso\FacebookBundle\Event\Sdk\HttpClientPreSendEvent::getTimeOut
+     * @covers \AdEspresso\FacebookBundle\Event\Sdk\HttpClientPreSendEvent::getTimeOut
      *
      * @todo   Implement testGetTimeOut()
      */
@@ -126,7 +126,7 @@ class HttpClientPreSendEventTest extends TestCase
     }
 
     /**
-     * @covers AdEspresso\FacebookBundle\Event\Sdk\HttpClientPreSendEvent::setTimeOut
+     * @covers \AdEspresso\FacebookBundle\Event\Sdk\HttpClientPreSendEvent::setTimeOut
      *
      * @todo   Implement testSetTimeOut()
      */

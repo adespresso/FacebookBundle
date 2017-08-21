@@ -5,7 +5,7 @@ namespace AdEspresso\FacebookBundle\Event\Sdk;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers AdEspresso\FacebookBundle\Event\Sdk\PersistentDataPreSetEvent
+ * @covers \AdEspresso\FacebookBundle\Event\Sdk\PersistentDataPreSetEvent
  * @group unit
  */
 class PersistentDataPreSetEventTest extends TestCase
@@ -27,7 +27,7 @@ class PersistentDataPreSetEventTest extends TestCase
     }
 
     /**
-     * @covers AdEspresso\FacebookBundle\Event\Sdk\PersistentDataPreSetEvent::getKey
+     * @covers \AdEspresso\FacebookBundle\Event\Sdk\PersistentDataPreSetEvent::getKey
      *
      * @todo   Implement testGetKey()
      */
@@ -37,7 +37,7 @@ class PersistentDataPreSetEventTest extends TestCase
     }
 
     /**
-     * @covers AdEspresso\FacebookBundle\Event\Sdk\PersistentDataPreSetEvent::setKey
+     * @covers \AdEspresso\FacebookBundle\Event\Sdk\PersistentDataPreSetEvent::setKey
      *
      * @todo   Implement testSetKey()
      */
@@ -47,7 +47,7 @@ class PersistentDataPreSetEventTest extends TestCase
     }
 
     /**
-     * @covers AdEspresso\FacebookBundle\Event\Sdk\PersistentDataPreSetEvent::getValue
+     * @covers \AdEspresso\FacebookBundle\Event\Sdk\PersistentDataPreSetEvent::getValue
      *
      * @todo   Implement testGetValue()
      */
@@ -57,7 +57,7 @@ class PersistentDataPreSetEventTest extends TestCase
     }
 
     /**
-     * @covers AdEspresso\FacebookBundle\Event\Sdk\PersistentDataPreSetEvent::setValue
+     * @covers \AdEspresso\FacebookBundle\Event\Sdk\PersistentDataPreSetEvent::setValue
      *
      * @todo   Implement testSetValue()
      */

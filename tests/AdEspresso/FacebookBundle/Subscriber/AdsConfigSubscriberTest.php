@@ -6,7 +6,7 @@ use FacebookAds\Api;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers AdEspresso\FacebookBundle\Subscriber\AdsConfigSubscriber
+ * @covers \AdEspresso\FacebookBundle\Subscriber\AdsConfigSubscriber
  * @group unit
  */
 class AdsConfigSubscriberTest extends TestCase
@@ -28,7 +28,7 @@ class AdsConfigSubscriberTest extends TestCase
     }
 
     /**
-     * @covers AdEspresso\FacebookBundle\Subscriber\AdsConfigSubscriber::getSubscribedEvents
+     * @covers \AdEspresso\FacebookBundle\Subscriber\AdsConfigSubscriber::getSubscribedEvents
      *
      * @todo   Implement testGetSubscribedEvents()
      */
@@ -38,7 +38,7 @@ class AdsConfigSubscriberTest extends TestCase
     }
 
     /**
-     * @covers AdEspresso\FacebookBundle\Subscriber\AdsConfigSubscriber::initialize
+     * @covers \AdEspresso\FacebookBundle\Subscriber\AdsConfigSubscriber::initialize
      *
      * @todo   Implement testInitialize()
      */

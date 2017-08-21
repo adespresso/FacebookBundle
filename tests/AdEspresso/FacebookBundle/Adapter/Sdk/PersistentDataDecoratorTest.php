@@ -6,7 +6,7 @@ use Facebook\PersistentData\PersistentDataInterface;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers AdEspresso\FacebookBundle\Adapter\Sdk\PersistentDataDecorator
+ * @covers \AdEspresso\FacebookBundle\Adapter\Sdk\PersistentDataDecorator
  * @group unit
  */
 class PersistentDataDecoratorTest extends TestCase
@@ -26,7 +26,7 @@ class PersistentDataDecoratorTest extends TestCase
     }
 
     /**
-     * @covers AdEspresso\FacebookBundle\Adapter\Sdk\PersistentDataDecorator::setEventDispatcher
+     * @covers \AdEspresso\FacebookBundle\Adapter\Sdk\PersistentDataDecorator::setEventDispatcher
      *
      * @todo   Implement testSetEventDispatcher()
      */
@@ -36,7 +36,7 @@ class PersistentDataDecoratorTest extends TestCase
     }
 
     /**
-     * @covers AdEspresso\FacebookBundle\Adapter\Sdk\PersistentDataDecorator::get
+     * @covers \AdEspresso\FacebookBundle\Adapter\Sdk\PersistentDataDecorator::get
      *
      * @todo   Implement testGet()
      */
@@ -46,7 +46,7 @@ class PersistentDataDecoratorTest extends TestCase
     }
 
     /**
-     * @covers AdEspresso\FacebookBundle\Adapter\Sdk\PersistentDataDecorator::set
+     * @covers \AdEspresso\FacebookBundle\Adapter\Sdk\PersistentDataDecorator::set
      *
      * @todo   Implement testSet()
      */

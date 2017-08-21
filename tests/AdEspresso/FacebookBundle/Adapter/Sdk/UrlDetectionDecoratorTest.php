@@ -6,7 +6,7 @@ use Facebook\Url\UrlDetectionInterface;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers AdEspresso\FacebookBundle\Adapter\Sdk\UrlDetectionDecorator
+ * @covers \AdEspresso\FacebookBundle\Adapter\Sdk\UrlDetectionDecorator
  * @group unit
  */
 class UrlDetectionDecoratorTest extends TestCase
@@ -26,7 +26,7 @@ class UrlDetectionDecoratorTest extends TestCase
     }
 
     /**
-     * @covers AdEspresso\FacebookBundle\Adapter\Sdk\UrlDetectionDecorator::setEventDispatcher
+     * @covers \AdEspresso\FacebookBundle\Adapter\Sdk\UrlDetectionDecorator::setEventDispatcher
      *
      * @todo   Implement testSetEventDispatcher()
      */
@@ -36,7 +36,7 @@ class UrlDetectionDecoratorTest extends TestCase
     }
 
     /**
-     * @covers AdEspresso\FacebookBundle\Adapter\Sdk\UrlDetectionDecorator::getCurrentUrl
+     * @covers \AdEspresso\FacebookBundle\Adapter\Sdk\UrlDetectionDecorator::getCurrentUrl
      *
      * @todo   Implement testGetCurrentUrl()
      */

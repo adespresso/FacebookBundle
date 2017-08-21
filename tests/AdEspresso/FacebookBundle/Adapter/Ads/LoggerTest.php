@@ -5,7 +5,7 @@ namespace AdEspresso\FacebookBundle\Adapter\Ads;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers AdEspresso\FacebookBundle\Adapter\Ads\Logger
+ * @covers \AdEspresso\FacebookBundle\Adapter\Ads\Logger
  * @group unit
  */
 class LoggerTest extends TestCase
@@ -24,7 +24,7 @@ class LoggerTest extends TestCase
     }
 
     /**
-     * @covers AdEspresso\FacebookBundle\Adapter\Ads\Logger::log
+     * @covers \AdEspresso\FacebookBundle\Adapter\Ads\Logger::log
      *
      * @todo   Implement testLog()
      */
@@ -34,7 +34,7 @@ class LoggerTest extends TestCase
     }
 
     /**
-     * @covers AdEspresso\FacebookBundle\Adapter\Ads\Logger::logRequest
+     * @covers \AdEspresso\FacebookBundle\Adapter\Ads\Logger::logRequest
      *
      * @todo   Implement testLogRequest()
      */
@@ -44,7 +44,7 @@ class LoggerTest extends TestCase
     }
 
     /**
-     * @covers AdEspresso\FacebookBundle\Adapter\Ads\Logger::logResponse
+     * @covers \AdEspresso\FacebookBundle\Adapter\Ads\Logger::logResponse
      *
      * @todo   Implement testLogResponse()
      */
