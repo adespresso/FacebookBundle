@@ -103,11 +103,11 @@ Readings:
 
 .. _Composer: https://getcomposer.org/
 .. _installation chapter: https://getcomposer.org/doc/00-intro.md
-.. _Configuration Reference: https://github.com/adespresso/FacebookBundle/tree/master/Resources/doc/configuration-reference.rst
-.. _Events: https://github.com/adespresso/FacebookBundle/tree/master/Resources/doc/events.rst
-.. _Logging Channel: https://github.com/adespresso/FacebookBundle/tree/master/Resources/doc/logging-channel.rst
-.. _Optional Usage: https://github.com/adespresso/FacebookBundle/tree/master/Resources/doc/optional-usage.rst
-.. _Query Builder: https://github.com/adespresso/FacebookBundle/tree/master/Resources/doc/query-builder.rst
+.. _Configuration Reference: https://github.com/adespresso/FacebookBundle/tree/master/src/AdEspresso/FacebookBundle/Resources/doc/configuration-reference.rst
+.. _Events: https://github.com/adespresso/FacebookBundle/tree/master/src/AdEspresso/FacebookBundle/Resources/doc/events.rst
+.. _Logging Channel: https://github.com/adespresso/FacebookBundle/tree/master/src/AdEspresso/FacebookBundle/Resources/doc/logging-channel.rst
+.. _Optional Usage: https://github.com/adespresso/FacebookBundle/tree/master/src/AdEspresso/FacebookBundle/Resources/doc/optional-usage.rst
+.. _Query Builder: https://github.com/adespresso/FacebookBundle/tree/master/src/AdEspresso/FacebookBundle/Resources/doc/query-builder.rst
 
 License
 -------

@@ -66,4 +66,4 @@ Documentation
 
 The source of the documentation is stored in the `Resources/doc/` folder in this bundle:
 
-[Read the Documentation for master](https://github.com/adespresso/FacebookBundle/tree/master/Resources/doc/index.rst)
+[Read the Documentation for master](https://github.com/adespresso/FacebookBundle/blob/master/src/AdEspresso/FacebookBundle/Resources/doc/index.rst)
